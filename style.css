@@ -1,0 +1,31 @@
+/* レイアウト・デザイン用の簡易スタイル */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}
+
+.language-buttons {
+  margin-bottom: 20px;
+}
+
+/* 各言語ブロックはデフォルトで非表示にし、スクリプトで表示切り替え */
+.lang-en, .lang-zh {
+  display: none;
+}
