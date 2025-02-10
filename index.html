@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>portfolio</title>
+  <style>
+    /* レイアウト・デザイン用の簡易スタイル */
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+    }
+    .language-buttons {
+      margin-bottom: 20px;
+    }
+    /* 各言語ブロックはデフォルトで非表示にし、スクリプトで表示切り替え */
+    .lang-en, .lang-zh {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- 言語切り替えボタン -->
+  <div class="language-buttons">
+    <button onclick="showLanguage('ja')">日本語</button>
+    <button onclick="showLanguage('en')">English</button>
+    <button onclick="showLanguage('zh')">中文</button>
+  </div>
+  
+  <!-- 日本語表示ブロック -->
+  <div class="lang-ja">
+    <h1>Sora Osada</h1>
+    <h2>学歴</h2>
+    <table>
+      <tr><td>桐蔭学園高等学校 アドバンスコース [2019/04～2022/03]</td></tr>
+      <tr><td>法政大学 情報科学部 ディジタルメディア学科 [2022/04 入学]</td></tr>
+      <tr><td>法政大学 情報科学部 コンピュータ科学科 メディア科学コース [2026/03 卒業見込]</td></tr>
+    </table>
+    <h2>保有資格</h2>
+    <table>
+      <tr><td>TOEIC 675 点 (Listening: 395, Reading: 280) 取得年月: 2024/04/02</td></tr>
+      <tr><td>普通自動車第一種運転免許 取得年月: 2023/10</td></tr>
+    </table>
+    <h2>学業</h2>
+    <table>
+      <tr><td>卒論テーマ(仮): 水鉄砲を用いた空中像とのインタラクション</td></tr>
+    </table>
+    <h2>インターンシップ経験</h2>
+    <table>
+      <tr><td>大日本印刷株式会社 ABセンター (5日間)</td></tr>
+      <tr><td>TISソリューションリンク株式会社 (5日間)</td></tr>
+    </table>
+    <p>最終更新日: <span class="last-updated"></span></p>
+  </div>
+  
+  <!-- 英語表示ブロック -->
+  <div class="lang-en">
+    <h1>Sora Osada</h1>
+    <h2>Education</h2>
+    <table>
+      <tr><td>Toin Gakuen High School, Advanced Course [2019/04 ~ 2022/03]</td></tr>
+      <tr><td>Hosei University, Faculty of Computer and Information Sciences, Department of Digital Media (Enrolled: 2022/04)</td></tr>
+      <tr><td>Hosei University, Faculty of Computer and Information Sciences, Dept. of Computer Science, Media Science Course (Expected Graduation: 2026/03)</td></tr>
+    </table>
+    <h2>Qualifications</h2>
+    <table>
+      <tr><td>TOEIC Score: 675 (Listening: 395, Reading: 280) Acquired: 2024/04/02</td></tr>
+      <tr><td>Japanese Ordinary Driver’s License (Type 1) Acquired: 2023/10</td></tr>
+    </table>
+    <h2>Academics</h2>
+    <table>
+      <tr><td>Tentative Thesis Topic: Interaction with aerial images using a water gun</td></tr>
+    </table>
+    <h2>Internship Experience</h2>
+    <table>
+      <tr><td>Dai Nippon Printing Co., Ltd. AB Center (5 days)</td></tr>
+      <tr><td>TIS Solution Link Inc. (5 days)</td></tr>
+    </table>
+    <p>Last Updated: <span class="last-updated"></span></p>
+  </div>
+  
+  <!-- 中国語表示ブロック -->
+  <div class="lang-zh">
+    <h1>Sora Osada</h1>
+    <h2>教育</h2>
+    <table>
+      <tr><td>桐蔭学园高级中学 高级课程 [2019/04 ~ 2022/03]</td></tr>
+      <tr><td>法政大学 信息科学部 数字媒体学科 [2022/04 入学]</td></tr>
+      <tr><td>法政大学 信息科学部 计算机科学科 媒体科学课程 [预计 2026/03 毕业]</td></tr>
+    </table>
+    <h2>资历</h2>
+    <table>
+      <tr><td>TOEIC 成绩: 675 (听力: 395, 阅读: 280) 获得日期: 2024/04/02</td></tr>
+      <tr><td>日本普通汽车第一种驾驶执照 获得日期: 2023/10</td></tr>
+    </table>
+    <h2>学业</h2>
+    <table>
+      <tr><td>毕业论文课题（暂定）：利用水枪与空中图像进行交互</td></tr>
+    </table>
+    <h2>实习经历</h2>
+    <table>
+      <tr><td>大日本印刷株式会社 AB中心 (5天)</td></tr>
+      <tr><td>TIS Solution Link株式会社 (5天)</td></tr>
+    </table>
+    <p>最后更新日期: <span class="last-updated"></span></p>
+  </div>
+
+  <script>
+    // 言語切り替え関数
+    function showLanguage(lang) {
+      // すべて非表示にする
+      document.querySelectorAll('.lang-ja, .lang-en, .lang-zh').forEach(function(el) {
+        el.style.display = 'none';
+      });
+      // 指定した言語のみ表示
+      document.querySelector('.lang-' + lang).style.display = 'block';
+    }
+
+    // ページ読み込み時に実行 => 最終更新日を当日の日付に設定
+    window.addEventListener('DOMContentLoaded', function() {
+      // 現在の日付(ローカル形式)を取得し、クラス名「last-updated」に反映
+      const currentDate = new Date().toLocaleDateString();
+      document.querySelectorAll('.last-updated').forEach(function(span) {
+        span.textContent = currentDate;
+      });
+
+      // 初期表示は日本語に
+      showLanguage('ja');
+    });
+  </script>
+</body>
+</html>
